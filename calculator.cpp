@@ -5,20 +5,46 @@ using namespace std;
 int main ()
 {
     // variables go here
-    int a, b;
-    int sum = 0;
+    char op;
+    double num1, num2 = 0.0;
 
     // inputs go here
-    cout << "Enter first Number : ";
-    cin >> a;
-    cout << "Enter second Number : ";
-    cin >> b;
+    cout << "Enter the Operator (+, -, *, /) : ";
+    cin >> op;
+    cout << "Enter first number              : ";
+    cin >> num1;
+    cout << "Enter second number             : ";
+    cin >> num2;
 
     // calculations go here
-    sum = a + b;
-
     //outputs go here
-    cout << "Addition of two numbers is : " << sum;
+    switch (op)
+    {
+        case '+' :
+            cout << num1 << " + " << num2 << " = " << (num1 + num2);
+            break;
+
+        case '-' :
+            cout << num1 << " - " << num2 << " = " << (num1 - num2);
+            break;
+
+        case '*' :
+            cout << num1 << " * " << num2 << " = " << (num1 * num2);
+            break;
+
+        case '/' :
+            if (num2 != 0.0) 
+                cout << num1 << " / " << num2 << " = " << (num1 / num2);
+
+            else 
+                cout << "Can not divide by 0";
+
+            break;
+
+        default : 
+            cout << op << " is an invalid operator";
+
+    }
 
     return 0;
 }
